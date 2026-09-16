@@ -1,0 +1,7 @@
+# robots.txt — El Dorado Forward
+# Site is under construction. Do not index.
+
+User-agent: *
+Disallow: /
+
+Sitemap: https://eldoradoforward.com/sitemap.xml
