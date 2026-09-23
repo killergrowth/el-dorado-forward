@@ -1,22 +1,25 @@
-<div id="edf-header-root"></div>
-<script type="text/babel">
-(function() {
-  const DS = window.ElDoradoForwardDesignSystem_eb1381;
-  const PAGES = window.EDF_PAGES;
-  const currentPage = window.EDF_CURRENT_PAGE;
-
-  function SiteHeader() {
-    const [open, setOpen] = React.useState(false);
-    const navLinks = PAGES;
-    return React.createElement(DS.SiteHeader, {
-      logoSrc: '/images/logo-full-color.png',
-      links: navLinks.map(p => ({ ...p, active: p.value === currentPage })),
-      active: currentPage,
-      onNavigate: (val) => { const p = PAGES.find(x => x.value === val); if (p) location.href = p.href; },
-      cta: 'Vote No · Nov 3',
-      onCta: () => { location.href = '/ballot/'; }
-    });
-  }
-  ReactDOM.createRoot(document.getElementById('edf-header-root')).render(React.createElement(SiteHeader));
-})();
-</script>
+<header class="edf-site-header">
+  <div class="edf-site-header__inner">
+    <a href="/" class="edf-site-header__logo">
+      <img src="/images/logo-full-color.png" alt="El Dorado Forward" height="40">
+    </a>
+    <nav class="edf-site-header__nav" aria-label="Main navigation">
+      <a href="/ballot/"       class="edf-site-header__link<!-- NAV_ACTIVE:ballot -->">Ballot</a>
+      <a href="/why/"          class="edf-site-header__link<!-- NAV_ACTIVE:why -->">Why El Dorado</a>
+      <a href="/regulate/"     class="edf-site-header__link<!-- NAV_ACTIVE:regulate -->">Regulate vs. Ban</a>
+      <a href="/impacts/"      class="edf-site-header__link<!-- NAV_ACTIVE:impacts -->">Impacts</a>
+      <a href="/battery/"      class="edf-site-header__link<!-- NAV_ACTIVE:battery -->">Batteries</a>
+      <a href="/communities/"  class="edf-site-header__link<!-- NAV_ACTIVE:communities -->">Communities</a>
+      <a href="/sources/"      class="edf-site-header__link<!-- NAV_ACTIVE:sources -->">Sources</a>
+    </nav>
+    <a href="/ballot/" class="edf-btn edf-btn--action edf-btn--sm edf-site-header__cta">Vote No · Nov 3</a>
+    <button class="edf-site-header__hamburger" aria-label="Open menu" aria-expanded="false" onclick="
+      var nav = document.querySelector('.edf-site-header__nav');
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('edf-site-header__nav--open', !expanded);
+    ">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

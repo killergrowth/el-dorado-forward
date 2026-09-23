@@ -1,39 +1,42 @@
-<div id="edf-footer-root"></div>
-<script type="text/babel">
-(function() {
-  const DS = window.ElDoradoForwardDesignSystem_eb1381;
-  const PAGES = window.EDF_PAGES;
-
-  function Footer() {
-    const lnk = { color: '#fff', textDecoration: 'none', fontSize: 15 };
-    return React.createElement('footer', { style: { background: 'var(--edf-navy)', color: '#fff' } },
-      React.createElement('div', { style: { height: 6, background: 'var(--edf-gradient)' } }),
-      React.createElement('div', { style: { maxWidth: 'var(--container)', margin: '0 auto', padding: '56px var(--gutter) 40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(260px,100%),1fr))', gap: 40 } },
-        React.createElement('div', { style: { display: 'flex', flexDirection: 'column', gap: 16 } },
-          React.createElement(DS.VoteNoLockup, { size: 'sm', subline: false }),
-          React.createElement('p', { style: { color: 'var(--fg-on-dark-2)', fontSize: 15, maxWidth: 360 } }, 'The November 3', React.createElement('sup', null, 'rd'), ' ordinance will limit El Dorado\'s future progress.'),
-          React.createElement('div', { style: { display: 'flex', flexDirection: 'column', gap: 2 } },
-            React.createElement('span', { style: { font: 'var(--type-eyebrow)', letterSpacing: 'var(--tracking-eyebrow)', color: 'var(--fg-on-dark-2)' } }, 'KEEP MOVING'),
-            React.createElement('span', { style: { font: '900 22px var(--font-display)' } }, 'eldorado', React.createElement('span', { style: { color: 'var(--edf-lime)' } }, 'forward'), '.com')
-          )
-        ),
-        React.createElement('nav', { style: { display: 'flex', flexDirection: 'column', gap: 10 } },
-          React.createElement('div', { style: { font: 'var(--type-eyebrow)', letterSpacing: 'var(--tracking-eyebrow)', textTransform: 'uppercase', color: 'var(--edf-lime)' } }, 'The issue'),
-          ...PAGES.filter(p => p.value !== 'home').map(p =>
-            React.createElement('a', { key: p.value, href: p.href, style: lnk }, p.label)
-          )
-        ),
-        React.createElement('div', { style: { display: 'flex', flexDirection: 'column', gap: 10 } },
-          React.createElement('div', { style: { font: 'var(--type-eyebrow)', letterSpacing: 'var(--tracking-eyebrow)', textTransform: 'uppercase', color: 'var(--edf-lime)' } }, 'Election Day'),
-          React.createElement('span', { style: { font: '700 20px var(--font-display)' } }, 'Tuesday, November 3, 2026'),
-          React.createElement('span', { style: { color: 'var(--fg-on-dark-2)', fontSize: 15 } }, 'Special Question Election, City of El Dorado')
-        )
-      ),
-      React.createElement('div', { style: { maxWidth: 'var(--container)', margin: '0 auto', padding: '18px var(--gutter) 28px', borderTop: '1px solid rgba(255,255,255,.14)', fontSize: 13, color: 'var(--fg-on-dark-2)' } },
-        'Paid for by El Dorado Forward, Inc., Linda Jolly, Committee Chair'
-      )
-    );
-  }
-  ReactDOM.createRoot(document.getElementById('edf-footer-root')).render(React.createElement(Footer));
-})();
-</script>
+<footer style="background:var(--edf-navy);color:#fff;">
+  <div style="height:6px;background:var(--edf-gradient);"></div>
+  <div style="max-width:var(--container);margin:0 auto;padding:56px var(--gutter) 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:40px;">
+    <!-- Brand col -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="edf-vote-no-lockup edf-vote-no-lockup--sm">
+        <span class="edf-vote-no-lockup__icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <rect x="3" y="3" width="34" height="34" rx="6" stroke="currentColor" stroke-width="3.5"/>
+            <path d="M10 20.5L17.5 28L30 13" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="edf-vote-no-lockup__text">VOTE <span class="edf-vote-no-lockup__no">NO</span></span>
+      </div>
+      <p style="color:var(--fg-on-dark-2);font-size:15px;max-width:360px;margin:0;">The November 3<sup>rd</sup> ordinance will limit El Dorado's future progress.</p>
+      <div style="display:flex;flex-direction:column;gap:2px;">
+        <span style="font:var(--type-eyebrow);letter-spacing:var(--tracking-eyebrow);color:var(--fg-on-dark-2);">KEEP MOVING</span>
+        <span style="font:900 22px var(--font-display);">eldorado<span style="color:var(--edf-lime);">forward</span>.com</span>
+      </div>
+    </div>
+    <!-- Nav col -->
+    <nav style="display:flex;flex-direction:column;gap:10px;" aria-label="Footer navigation">
+      <div style="font:var(--type-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--edf-lime);">The issue</div>
+      <a href="/ballot/"      style="color:#fff;text-decoration:none;font-size:15px;">Ballot</a>
+      <a href="/why/"         style="color:#fff;text-decoration:none;font-size:15px;">Why El Dorado</a>
+      <a href="/regulate/"    style="color:#fff;text-decoration:none;font-size:15px;">Regulate vs. Ban</a>
+      <a href="/impacts/"     style="color:#fff;text-decoration:none;font-size:15px;">Impacts</a>
+      <a href="/battery/"     style="color:#fff;text-decoration:none;font-size:15px;">Batteries</a>
+      <a href="/communities/" style="color:#fff;text-decoration:none;font-size:15px;">Communities</a>
+      <a href="/sources/"     style="color:#fff;text-decoration:none;font-size:15px;">Sources</a>
+    </nav>
+    <!-- Election col -->
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="font:var(--type-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--edf-lime);">Election Day</div>
+      <span style="font:700 20px var(--font-display);">Tuesday, November 3, 2026</span>
+      <span style="color:var(--fg-on-dark-2);font-size:15px;">Special Question Election, City of El Dorado</span>
+    </div>
+  </div>
+  <div style="max-width:var(--container);margin:0 auto;padding:18px var(--gutter) 28px;border-top:1px solid rgba(255,255,255,.14);font-size:13px;color:var(--fg-on-dark-2);">
+    Paid for by El Dorado Forward, Inc., Linda Jolly, Committee Chair
+  </div>
+</footer>
