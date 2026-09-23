@@ -15,13 +15,7 @@ node build.js
 if ($LASTEXITCODE -ne 0) { Write-Host "Build failed. Aborting."; exit 1 }
 
 $credsPath = "C:\Users\KillerGrowth\.openclaw\workspace\References\credentials.md"
-$token = node -e "
-const fs = require('fs');
-const creds = fs.readFileSync('$($credsPath -replace '\\\\','/')', 'utf8');
-const match = creds.match(/Cloudflare Master API Token[^\`]*\`([^\`]+)\`/);
-if (match) process.stdout.write(match[1].trim());
-else { process.stderr.write('Token not found'); process.exit(1); }
-"
+$token = node -e "const fs=require('fs');const creds=fs.readFileSync(process.argv[1],'utf8');const m=creds.match(/cfut_([A-Za-z0-9]+)/);if(m)process.stdout.write('cfut_'+m[1]);else{process.stderr.write('Token not found');process.exit(1);}" $credsPath
 if ($LASTEXITCODE -ne 0) { Write-Host "Could not read CF token from credentials.md"; exit 1 }
 
 $env:CLOUDFLARE_API_TOKEN = $token
