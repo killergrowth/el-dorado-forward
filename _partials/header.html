@@ -7,7 +7,7 @@
 
   function SiteHeader() {
     const [open, setOpen] = React.useState(false);
-    const navLinks = PAGES.filter(p => p.value !== 'home');
+    const navLinks = PAGES;
     return React.createElement(DS.SiteHeader, {
       logoSrc: '/images/logo-full-color.png',
       links: navLinks.map(p => ({ ...p, active: p.value === currentPage })),
