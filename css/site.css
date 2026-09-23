@@ -18,6 +18,16 @@ html { scroll-behavior: auto; }
   }
 }
 
+/* Two-column content+stat sections */
+.edf-two-col {
+  grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
+}
+@media (max-width: 768px) {
+  .edf-two-col {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* Nav active state */
 .edf-nav__link--active {
   color: var(--edf-lime) !important;
