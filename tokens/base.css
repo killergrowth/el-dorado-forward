@@ -1,0 +1,7 @@
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font:var(--type-body);color:var(--fg-1);background:var(--bg-page);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{margin:0;font-family:var(--font-display);text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+a{color:var(--fg-link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:2px}
+a:hover{color:var(--fg-link-hover)}
+:focus-visible{outline:none;box-shadow:var(--focus-ring)}

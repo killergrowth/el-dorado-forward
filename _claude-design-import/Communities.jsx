@@ -1,0 +1,59 @@
+function Communities({ go }) {
+  const { Badge, Icon } = DS;
+  const Stat2 = ({ v, l, color }) => <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}><span style={{ font: '900 40px/1 var(--font-display)', color }}>{v}</span><span style={{ font: '500 14px/1.35 var(--font-body)', color: 'var(--fg-2)' }}>{l}</span></div>;
+  const Case = ({ good, place, verdict, title, stats, points, ids, egMore }) => {
+    const accent = good ? 'var(--edf-green)' : 'var(--danger, #c0392b)';
+    return <div style={{ display: 'flex', flexDirection: 'column', background: '#fff', border: '1px solid var(--border-1)', borderRadius: 'var(--radius-lg)', overflow: 'hidden' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 28px', background: accent, color: '#fff', font: '800 14px/1 var(--font-body)', letterSpacing: 'var(--tracking-eyebrow)', textTransform: 'uppercase' }}><Icon name={good ? 'circle-check' : 'circle-x'} size={18} />{verdict}</div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 22, padding: '28px 28px 32px', flex: 1 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <span style={{ font: 'var(--type-eyebrow)', letterSpacing: 'var(--tracking-eyebrow)', textTransform: 'uppercase', color: 'var(--fg-2)' }}>{place}</span>
+          <h3 style={{ font: '900 32px/1.05 var(--font-display)', textTransform: 'uppercase', color: 'var(--fg-1)', margin: 0 }}>{title}</h3>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(120px,1fr))', gap: 16, padding: '18px 0', borderTop: '1px solid var(--border-1)', borderBottom: '1px solid var(--border-1)' }}>{stats.map(([v, l]) => <Stat2 key={l} v={v} l={l} color={accent} />)}</div>
+        <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>{points.map((p, i) => <li key={i} style={{ display: 'flex', gap: 10, font: '400 16px/1.45 var(--font-body)', color: 'var(--fg-1)' }}><span style={{ color: accent, flexShrink: 0, marginTop: 2 }}><Icon name={good ? 'check' : 'x'} size={18} /></span><span>{p}</span></li>)}</ul>
+        <div style={{ marginTop: 'auto' }}><Src ids={ids} /></div>
+      </div>
+    </div>;
+  };
+  const rows = [['When were the rules set?', 'Years ahead, with data-center zoning districts', 'Rules existed, but talks with the developer began in private'], ['How was the public involved?', 'Public hearings on each project and a town hall with 500+ residents', 'Residents learned details through open-records requests'], ['Where are the buildings?', 'In the business park, away from homes', '360 acres near homes; one plaintiff lives about 300 yards away'], ['What did residents get?', '$400 water bill credits and $400 gift cards', 'A lawsuit, an ousted council and recall petitions'], ['What happened next?', '19 more data centers in the pipeline', 'No plans or permits submitted as of June 2026']];
+  return <>
+    <PageHead n="6" eyebrow="How are other communities handling this?" depth="4 min read" title="Two communities, two very different results" lead="One town set clear rules, kept the process public, and has benefited for 25 years. The other let talks happen out of view and is now tied up in court and turmoil." />
+    <ShortVersion>
+      <StepCard n="1" icon="circle-check" title="Elk Grove did it right">Clear zoning, public hearings, buildings kept in the business park. Data centers paid <strong>$45 million in property taxes</strong> there in 2025.</StepCard>
+      <StepCard n="2" icon="gift" title="Residents shared the win">Elk Grove residents got <strong>$400 water bill credits and $400 gift cards</strong> because data centers generated so much tax money.</StepCard>
+      <StepCard n="3" icon="triangle-alert" title="Festus did it wrong">City leaders met with the developer <strong>out of public view</strong>. The result: a 12-count lawsuit and <strong>four council members voted out</strong>.</StepCard>
+      <StepCard n="4" icon="map-pin" title="El Dorado has the right tools">G-1463 puts Elk Grove's approach in place: <strong>rules first, public hearings, every project reviewed in the open</strong>.</StepCard>
+    </ShortVersion>
+    <Section pad="var(--space-8)">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}><Eyebrow>Case studies</Eyebrow><H2 style={{ fontSize: 40 }}>Process makes the difference</H2></div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(440px,100%),1fr))', gap: 24 }}>
+          <Case good place="Elk Grove Village, Illinois" verdict="The right way" title="Clear rules, public process, lasting benefits"
+            stats={[['$45M', 'Property taxes from data centers, 2025'], ['20', 'Data centers operating'], ['19', 'More in the pipeline']]}
+            points={[<>Data-center zoning in its <strong>Innovation & Technology Center</strong> district, set before projects arrive</>, <><strong>Public hearings</strong> before the Plan Commission on each project</>, <>Buildings kept in the <strong>business park, away from neighborhoods</strong></>, <>Residents received <strong>$400 water bill credits and $400 gift cards</strong> from the tax revenue</>, <>A 2026 town hall drew <strong>500+ residents</strong> to question the mayor directly</>]}
+            ids={['jtEG', 'fox32EG', 'nbcEG', 'egZoning', 'egHearing']} />
+          <Case place="Festus, Missouri" verdict="The wrong way" title="Private talks, public backlash"
+            stats={[['12', 'Counts in the residents’ lawsuit'], ['4', 'Council members voted out'], ['0', 'Plans submitted as of June 2026']]}
+            points={[<>City officials discussed the project with the developer <strong>starting in August 2025</strong>, before the public knew</>, <>Emails showed council members <strong>met in small groups to avoid a quorum</strong>, keeping meetings private</>, <>Residents sued to overturn the rezoning and development agreement, alleging <strong>Sunshine Law violations</strong>. The City says it followed the law.</>, <><strong>Four incumbents lost</strong> in April 2026, and residents filed recall petitions against the mayor and three more members</>]}
+            ids={['leaderFestus', 'stlprFestus', 'ksdkFestus', 'festusSuit']} />
+        </div>
+      </div>
+    </Section>
+    <Section bg="var(--bg-subtle)" pad="var(--space-8)">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+        <Eyebrow>Side by side</Eyebrow>
+        <div style={{ overflowX: 'auto', border: '1px solid var(--border-1)', borderRadius: 'var(--radius-lg)', background: '#fff' }}>
+          <table style={{ width: '100%', minWidth: 680, borderCollapse: 'collapse', fontSize: 15 }}>
+            <thead><tr style={{ background: 'var(--edf-blue)', color: '#fff', textAlign: 'left' }}><th style={{ padding: '14px 18px' }}></th><th style={{ padding: '14px 18px' }}>Elk Grove Village, IL</th><th style={{ padding: '14px 18px' }}>Festus, MO</th></tr></thead>
+            <tbody>{rows.map(([a, b, c], i) => <tr key={a} style={{ borderTop: '1px solid var(--border-1)', background: i % 2 ? 'var(--bg-subtle)' : '#fff' }}><td style={{ padding: '14px 18px', fontWeight: 700 }}>{a}</td><td style={{ padding: '14px 18px' }}>{b}</td><td style={{ padding: '14px 18px', color: 'var(--fg-2)' }}>{c}</td></tr>)}</tbody>
+          </table>
+        </div>
+        <P>The lesson for El Dorado: <strong>the damage in Festus came from a closed process, not from having rules</strong>. G-1463 requires what Elk Grove does: rules set in advance, public hearings, and every project reviewed in the open. A ban throws that framework out.</P>
+        <Src ids={['g1463', 'leaderFestus']} more="#regulate" />
+      </div>
+    </Section>
+    <NextPage go={go} to="sources" label="7 · Sources" title="Sources & further reading" />
+  </>;
+}
+window.Communities = Communities;

@@ -1,0 +1,53 @@
+:root{
+/* Primary brand colors (Colors and Fonts.pdf) */
+--edf-lime:#b2d235;        /* Color One  · C35 M0 Y100 K0 */
+--edf-green:#43ab69;       /* Color Two  · C73 M8 Y78 K0 */
+--edf-blue:#005684;        /* Color Three· C97 M68 Y26 K8 */
+/* Supporting tones sampled from the logo artwork */
+--edf-teal:#168f94;
+--edf-navy:#08304f;
+--edf-olive:#6a8a25;
+--edf-ink:#2d2d2d;         /* "EL DORADO" wordmark charcoal */
+/* Tints */
+--edf-lime-100:#f1f7d7;--edf-lime-300:#d4e684;
+--edf-green-100:#dcf0e3;--edf-green-700:#2f8550;
+--edf-blue-100:#d6e6ef;--edf-blue-700:#00446a;
+/* Neutrals */
+--edf-white:#ffffff;
+--edf-paper:#f5f7f2;
+--edf-gray-100:#eceee8;
+--edf-gray-200:#dde1d9;
+--edf-gray-400:#a3aaa3;
+--edf-gray-600:#5c655f;
+--edf-gray-800:#3b403d;
+/* Semantic status */
+--edf-danger:#c2412d;--edf-danger-100:#f8e1dc;
+--edf-warning:#d99a1e;--edf-warning-100:#fbefd5;
+--edf-success:var(--edf-green);--edf-info:var(--edf-blue);
+/* Brand gradient — follows the logo: lime (top/left) → green → blue */
+--edf-gradient:linear-gradient(90deg,#b2d235 0%,#43ab69 50%,#005684 100%); /* @kind color */
+--edf-gradient-v:linear-gradient(180deg,#b2d235 0%,#43ab69 50%,#005684 100%); /* @kind color */
+
+/* Semantic aliases */
+--fg-1:var(--edf-ink);
+--fg-2:var(--edf-gray-600);
+--fg-3:var(--edf-gray-400);
+--fg-on-dark:#ffffff;
+--fg-on-dark-2:#c9dbe6;
+--fg-link:var(--edf-blue);
+--fg-link-hover:var(--edf-blue-700);
+--bg-page:var(--edf-white);
+--bg-subtle:var(--edf-paper);
+--bg-dark:var(--edf-blue);
+--bg-deep:var(--edf-navy);
+--surface-card:var(--edf-white);
+--surface-sunken:var(--edf-gray-100);
+--border-1:var(--edf-gray-200);
+--border-strong:var(--edf-ink);
+--accent-primary:var(--edf-blue);
+--accent-primary-hover:var(--edf-blue-700);
+--accent-action:var(--edf-lime);
+--accent-action-hover:#a2c128;
+--accent-positive:var(--edf-green);
+--focus-ring:0 0 0 3px rgba(178,210,53,.65);
+}

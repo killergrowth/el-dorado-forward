@@ -1,0 +1,132 @@
+<!-- PAGE: Regulate -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Regulate vs. Ban · El Dorado Forward</title>
+<meta name="description" content="Communities use many tools to manage data centers. El Dorado already adopted several of them. A ban is only one option — and the most drastic one.">
+<!-- CANONICAL: https://eldoradoforward.com/regulate/ -->
+<!-- OG_TITLE: Regulate vs. Ban · El Dorado Forward -->
+<!-- INJECT:HEAD -->
+</head>
+<body>
+<!-- INJECT:HEADER -->
+<main>
+<div id="page-root"></div>
+</main>
+<!-- INJECT:FOOTER -->
+<script type="text/babel">
+(function() {
+  const DS = window.ElDoradoForwardDesignSystem_eb1381;
+  const { Card, Badge, Icon } = DS;
+
+  const Step = ({ n, icon, title, children }) => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 14, padding: '28px 28px 32px', background: '#fff', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-1)' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <span style={{ font: '900 56px/1 var(--font-display)', color: 'var(--edf-green)' }}>{n}</span>
+        <span style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: 'var(--edf-blue-100)', color: 'var(--edf-blue)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}><Icon name={icon} size={24} /></span>
+      </div>
+      <h3 style={{ font: '900 26px/1.1 var(--font-display)', textTransform: 'uppercase', color: 'var(--fg-1)', margin: 0 }}>{title}</h3>
+      <p style={{ font: '400 17px/1.5 var(--font-body)', color: 'var(--fg-2)' }}>{children}</p>
+    </div>
+  );
+
+  const tools = ['Prohibition', 'Temporary moratorium', 'Zoning districts', 'Conditional or special-use permits', 'Public hearings', 'Project-specific review', 'Water-use requirements', 'Power/infrastructure requirements', 'Noise standards', 'Setbacks and buffering', 'Development agreements', 'Fire and life-safety requirements', 'Decommissioning requirements', 'Approval with conditions', 'Denial of individual applications'];
+
+  const g1463 = [
+    ['file-search', 'Detailed disclosure', <span>Applicants must document <strong>water and cooling demand, peak electric load</strong>, utility interconnections, backup generation, and Evergy Path to Power status.</span>],
+    ['users', 'Public hearing', <span><strong>No data center can be approved without a public hearing</strong> before the Planning Commission and the Governing Body.</span>],
+    ['ruler', '500-foot setback', 'Outdoor generator yards, cooling yards, substations, and bulk fuel storage must sit 500 feet from residential districts or sensitive uses.'],
+    ['volume-2', 'Noise & testing limits', 'The City may limit generator testing (including overnight and weekends) and require acoustic mitigation and post-construction sound testing.'],
+    ['droplets', 'Water & wastewater', 'Average-day and peak-day water demand, cooling type, and wastewater discharge must be described. Utility provider letters may be required.'],
+    ['recycle', 'Decommissioning', 'Standards cover decommissioning, site restoration, and substantial changes after approval.'],
+  ];
+
+  const cmp = [
+    ['Who decides each project', 'No one. Every covered project is banned.', 'Planning Commission and City Commission, in public'],
+    ['Can the City say no?', 'Yes, to every project', 'Yes, case by case, on the facts'],
+    ['Can the City set conditions?', 'Not applicable', 'Yes: water, power, noise, setbacks, decommissioning'],
+    ['Can it change if needs change?', 'Only by another public vote, for 10 years', 'The Commission can amend zoning through its normal public process'],
+    ['Covers projects unrelated to data centers', 'Also bans battery storage above 80 kWh', 'Battery storage reviewed under the same framework'],
+  ];
+
+  function Regulate() {
+    return <>
+      <PageHead n="3" eyebrow="Prohibition vs. regulation" depth="4 min read" title="What are the options?" lead="Communities use many tools to manage data centers. A ban is one of them. El Dorado has already adopted several of the others." />
+
+      <Section pad="var(--space-8)" bg="var(--bg-subtle)">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+          <Eyebrow>The 30-second version</Eyebrow>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(250px,100%),1fr))', gap: 20 }}>
+            <Step n="1" icon="shield-check" title="We already have rules">Since June, <strong>every data center and battery project needs a Special Use Permit</strong>, with public hearings before the Planning Commission and City Commission.</Step>
+            <Step n="2" icon="file-search" title="Projects must show their numbers">Applicants must disclose <strong>water use, power demand, noise and setbacks</strong> up front. The City can set conditions on each one.</Step>
+            <Step n="3" icon="circle-x" title="The City can still say no">Regulation doesn't mean approval. <strong>The City can deny any project</strong> that doesn't fit, based on the facts.</Step>
+            <Step n="4" icon="lock" title="A ban locks us in">The ordinance bans every covered project and <strong>can't be changed for 10 years</strong> without another public vote.</Step>
+          </div>
+        </div>
+      </Section>
+
+      <Section pad="var(--space-8)">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+          <Eyebrow>Tools communities use</Eyebrow>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+            {tools.map((t, i) => <Badge key={t} tone={i === 0 ? 'danger' : 'blue'} style={{ textTransform: 'none', letterSpacing: 0, fontSize: 14, fontWeight: 600, height: 34, padding: '0 14px' }}>{t}</Badge>)}
+          </div>
+          <Src ids={['nacoPrimer', 'urban']} />
+        </div>
+      </Section>
+
+      <Section bg="var(--bg-subtle)" pad="var(--space-8)">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <Eyebrow>El Dorado's framework · Ordinance G-1463</Eyebrow>
+            <H2 style={{ fontSize: 40 }}>What the City already requires</H2>
+            <P>Adopted June 1, 2026. Data centers and battery storage are allowed only in the I-1, I-2 and O-I districts, and <strong>only with a Special Use Permit</strong>.</P>
+            <Src ids={['g1463', 'legalMemo']} />
+          </div>
+          <Grid min={300} gap={16}>
+            {g1463.map(([i, t, d]) => <Card key={t} icon={i} title={t}>{d}</Card>)}
+          </Grid>
+        </div>
+      </Section>
+
+      <Section pad="var(--space-8)">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+          <Eyebrow>Side by side</Eyebrow>
+          <div style={{ overflowX: 'auto', border: '1px solid var(--border-1)', borderRadius: 'var(--radius-lg)' }}>
+            <table style={{ width: '100%', minWidth: 640, borderCollapse: 'collapse', fontSize: 15 }}>
+              <thead><tr style={{ background: 'var(--edf-blue)', color: '#fff', textAlign: 'left' }}>
+                <th style={{ padding: '14px 18px' }}></th>
+                <th style={{ padding: '14px 18px' }}>Nov 3 ordinance (ban)</th>
+                <th style={{ padding: '14px 18px' }}>Current zoning (G-1463)</th>
+              </tr></thead>
+              <tbody>
+                {cmp.map(([a, b, c], i) => (
+                  <tr key={a} style={{ borderTop: '1px solid var(--border-1)', background: i % 2 ? 'var(--bg-subtle)' : '#fff' }}>
+                    <td style={{ padding: '14px 18px', fontWeight: 700 }}>{a}</td>
+                    <td style={{ padding: '14px 18px', color: 'var(--fg-2)' }}>{b}</td>
+                    <td style={{ padding: '14px 18px' }}>{c}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <Src ids={['ballot', 'g1463']} />
+        </div>
+      </Section>
+
+      <Section bg="var(--bg-subtle)" pad="var(--space-8)">
+        <Grid min={340} gap={20}>
+          <Quote cite="City of El Dorado, Official Statement, May 22, 2026" ids={['zoningStmt']}>From a zoning perspective, a blanket prohibition is difficult to defend unless it is supported by clear planning and factual findings.</Quote>
+          <Quote cite="City Attorney, Legal Memo, May 28, 2026" ids={['legalMemo']}>A vote in favor of this amendment is not a vote for data centers. It is a vote for the City having the tools to regulate them, condition them, or deny them through a transparent, legally sound public process.</Quote>
+        </Grid>
+      </Section>
+
+      <NextPage to="impacts" label="4 · Impacts" title="What could a data center mean for El Dorado?" />
+    </>;
+  }
+
+  ReactDOM.createRoot(document.getElementById('page-root')).render(<Regulate />);
+})();
+</script>
+</body>
+</html>

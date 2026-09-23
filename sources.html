@@ -1,0 +1,78 @@
+<!-- PAGE: Sources -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sources & Further Reading · El Dorado Forward</title>
+<meta name="description" content="The evidence library for El Dorado Forward — organized by type and authority. Primary documents and government research first. Advocacy and commentary labeled separately.">
+<!-- CANONICAL: https://eldoradoforward.com/sources/ -->
+<!-- OG_TITLE: Sources & Further Reading · El Dorado Forward -->
+<!-- INJECT:HEAD -->
+</head>
+<body>
+<!-- INJECT:HEADER -->
+<main>
+<div id="page-root"></div>
+</main>
+<!-- INJECT:FOOTER -->
+<script type="text/babel">
+(function() {
+  const DS = window.ElDoradoForwardDesignSystem_eb1381;
+  const S = window.EDF_SOURCES;
+  const { Badge, Icon } = DS;
+
+  const order = ['primary', 'gov', 'pro', 'bess', 'community', 'research', 'news'];
+
+  const Row = ({ t, by: who, d, u }) => (
+    <a href={u} target="_blank" rel="noreferrer" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 16, alignItems: 'center', padding: '14px 0', borderTop: '1px solid var(--border-1)', textDecoration: 'none' }}>
+      <span style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+        <span style={{ font: '600 16px/1.4 var(--font-body)', color: 'var(--fg-1)' }}>{t}</span>
+        <span style={{ fontSize: 13, color: 'var(--fg-2)' }}>{who}{d ? ' · ' + d : ''}</span>
+      </span>
+      <span style={{ display: 'flex', alignItems: 'center', gap: 6, color: 'var(--edf-blue)', font: '600 13px var(--font-body)' }}>
+        <Icon name={u && u.endsWith('.pdf') ? 'file-down' : 'external-link'} size={16} />
+        {u && u.endsWith('.pdf') ? 'PDF' : 'Open'}
+      </span>
+    </a>
+  );
+
+  function Sources() {
+    const by = order.map(t => [t, Object.values(S).filter(s => s.tier === t)]);
+
+    return <>
+      <PageHead n="7" eyebrow="Sources & further reading" depth="20+ minutes" title="The evidence library" lead="Organized by type and authority, not by political position. Primary documents and government research come first. Advocacy and commentary are labeled and kept separate." />
+
+      <Section pad="var(--space-8)">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(480px,100%),1fr))', gap: '48px 56px' }}>
+          {by.map(([t, list]) => (
+            <div key={t} style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: 8 }}><Eyebrow>{window.EDF_TIERS[t]}</Eyebrow></div>
+              {list.map(s => <Row key={s.u} {...s} />)}
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section bg="var(--bg-subtle)" pad="var(--space-8)">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 24 }}>
+          <Badge tone="warning" icon="info" style={{ alignSelf: 'flex-start' }}>Perspectives</Badge>
+          <P>These pieces come from policy organizations, advocacy groups, and opinion outlets. They are included so you can read the arguments, but they are not the primary support for factual claims on this site.</P>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(480px,100%),1fr))', gap: '40px 56px' }}>
+          {Object.entries(window.EDF_PERSPECTIVES || {}).map(([g, list]) => (
+            <div key={g}>
+              <div style={{ marginBottom: 8 }}><Eyebrow color="var(--fg-2)" bar="var(--edf-gray-400)">{g}</Eyebrow></div>
+              {list.map(([who, t, f]) => (
+                <Row key={f} t={t} by={who} u={'./research/library/pdf/' + f} />
+              ))}
+            </div>
+          ))}
+        </div>
+      </Section>
+    </>;
+  }
+
+  ReactDOM.createRoot(document.getElementById('page-root')).render(<Sources />);
+})();
+</script>
+</body>
+</html>

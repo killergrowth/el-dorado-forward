@@ -1,0 +1,36 @@
+function Battery({ go }) {
+  const { Card, Stat } = DS;
+  return <>
+    <PageHead n="5" eyebrow="Battery energy storage" depth="3 min read" title="What else does the ordinance cover?" lead="The ban is not only about data centers. It also prohibits Tier 2 and Tier 3 battery energy storage systems (BESS) for ten years." />
+    <ShortVersion>
+      <StepCard n="1" icon="battery-charging" title="It's not just data centers">The ordinance also bans <strong>battery storage above 80 kWh</strong> anywhere in the city, for 10 years.</StepCard>
+      <StepCard n="2" icon="building" title="Businesses use batteries">Utilities and businesses use them for <strong>backup power, peak demand and grid reliability</strong>.</StepCard>
+      <StepCard n="3" icon="flame" title="Safety rules already exist">National fire code <strong>NFPA 855</strong> covers installation through decommissioning.</StepCard>
+      <StepCard n="4" icon="shield-check" title="We already regulate them">G-1463 requires a <strong>Special Use Permit</strong> for battery storage, with hazardous-materials and emergency-access standards.</StepCard>
+    </ShortVersion>
+    <Section pad="var(--space-8)">
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(420px,100%),1fr))', gap: 48, alignItems: 'start' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <Eyebrow>What is a BESS?</Eyebrow>
+          <H2 style={{ fontSize: 40 }}>Batteries that store electricity</H2>
+          <P>A battery energy storage system <strong>stores electricity and releases it later</strong>. Utilities and businesses use them to manage peak demand, back up critical loads, and support grid reliability. NACo's primer covers the technology, grid uses, siting, safety, and the options local governments have.</P>
+          <Src ids={['nacoBess']} />
+        </div>
+        <Grid min={200} gap={16}>
+          <Card tone="paper"><Stat value="> 80 kWh" label="Any system above this aggregate capacity is banned" /><Src ids={['ballot']} /></Card>
+          <Card tone="paper"><Stat value="81–600" tone="green" label="kWh range for Tier 2, or mixed technologies in one room" /><Src ids={['judge']} /></Card>
+          <Card tone="paper" style={{ gridColumn: '1/-1' }}><Stat value="> 600 kWh" label="Tier 3: a single technology above 600 kWh" /><Src ids={['judge']} /></Card>
+        </Grid>
+      </div>
+    </Section>
+    <Section bg="var(--bg-subtle)" pad="var(--space-8)">
+      <Grid min={320} gap={20}>
+        <Card icon="flame" eyebrow="Fire & life safety" title="A national standard already exists"><strong>NFPA 855</strong> covers installation, commissioning, operation, maintenance, and decommissioning of stationary energy storage, including hazards and firefighting considerations.<div style={{ marginTop: 10 }}><Src ids={['nfpa855', 'nfpaSheet']} /></div></Card>
+        <Card icon="map" eyebrow="Local zoning" title="Covered by El Dorado's framework">G-1463 defines battery storage and <strong>requires a Special Use Permit</strong>, with standards for hazardous materials, emergency access, screening, and decommissioning.<div style={{ marginTop: 10 }}><Src ids={['g1463', 'eldocomm']} /></div></Card>
+        <Card icon="scale" eyebrow="Regulate or prohibit" title="Other communities choose rules">NACo describes siting, setbacks, and safety review as tools local governments use to manage BESS, <strong>rather than prohibition</strong>.<div style={{ marginTop: 10 }}><Src ids={['nacoBess']} /></div></Card>
+      </Grid>
+    </Section>
+    <NextPage go={go} to="communities" label="6 · Other communities" title="How are other communities handling this?" />
+  </>;
+}
+window.Battery = Battery;

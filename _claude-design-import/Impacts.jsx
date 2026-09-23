@@ -1,0 +1,59 @@
+function Impacts({ go }) {
+  const { Tabs, Card, Badge } = DS;
+  const [tab, setTab] = React.useState('Water & infrastructure');
+  const T = {
+    'Water & infrastructure': {
+      facts: [['El Dorado has water to spare.', 'The lake holds over 50 billion gallons, and the City has 10 million gallons a day set aside for industry. We still owe $39.8 million to the U.S. Army Corps of Engineers for that storage, and industrial customers help pay it.', ['cityFaq', 'industrialWater', 'lakeDebt']],
+        ['Closed-loop cooling uses very little water once filled.', 'The headlines about data centers using millions of gallons a day describe evaporative cooling, where water is used up as it cools the building. Many new data centers use closed-loop systems instead. The loop is filled once during construction and the same water circulates for years. Microsoft says its new closed-loop sites use about as much water in a year as a single restaurant. After the initial fill, the main ongoing use is restrooms and kitchens.', ['msftZeroWater', 'nadellaRestaurant', 'vantage']],
+        ['There is no single “data centers use X gallons” number.', 'Berkeley Lab found very large variation by server efficiency, cooling technology, grid characteristics, and climate.', ['lbnl']],
+        ['The ordinance draws its line at 100,000 gallons a day.', 'That is 1% of the City’s industrial water. A facility above that daily draw is “high impact” and banned, whatever its cooling design.', ['ballot', 'industrialWater']],
+        ['G-1463 requires water numbers up front.', 'Average-day and peak-day demand, process water, fire flow, cooling type, and wastewater discharge must be described before approval.', ['g1463']]],
+      qs: ['How much of El Dorado Lake’s capacity is committed today?', 'How does cooling technology change a facility’s water use?', 'What limits can the City set in a Special Use Permit?'], more: ['gao', 'nacoPrimer'] },
+    'Power & utilities': {
+      facts: [['10 MW is the ordinance’s power trigger.', 'Any computing facility with a peak electrical load above ten megawatts is “high impact.”', ['ballot']],
+        ['Kansas ties its incentive to a 10-year power contract.', 'To qualify for the state incentive, a data center must enter a 10-year electricity purchase agreement with its local utility.', ['ncslSubsidies', 'ksStatute']],
+        ['Applicants must show their utility path.', 'G-1463 requires peak load in megawatts, planned interconnections, backup generation inventory, and Evergy Path to Power status.', ['legalMemo']]],
+      qs: ['Who pays for new generation or transmission?', 'How could a large customer affect other ratepayers?', 'What does 10 MW represent in practice?'], more: ['crs', 'doe'] },
+    'Jobs, investment & taxes': {
+      facts: [['Kansas created a data center incentive in July 2025.', 'Qualifying projects must invest at least $250 million within five years and create 20 new jobs within two years. The state can claw back benefits.', ['ncslSubsidies', 'ksStatute']],
+        ['The Kansas exemption is a sales tax exemption.', 'NCSL reports it covers land, buildings, site improvements, and equipment, but specifically excludes electricity. It lists no state property tax abatement.', ['ncslSubsidies']],
+        ['A large project could lower homeowners’ property taxes.', 'In an illustrative $1 billion example with $300 million of taxable real property, revenue-neutral mill levies would save about $404 a year per $100,000 of home value, or about $1,010 on a $250,000 home. See the full example on the Why El Dorado page.', ['kdorAbate', 'kdorRatio', 'city2026']],
+        ['Barber County’s Google data center gets no property tax abatement.', 'Google agreed to pay 100% of its property taxes plus $5.5 million in community benefit payments.', ['kakeBarber']],
+        ['Construction jobs are large. Permanent jobs are fewer.', 'NCSL notes construction can support many workers, while operating facilities create far fewer permanent positions.', ['ncslSubsidies']]],
+      qs: ['Which impacts are known, and which depend on the project?', 'What local property tax would a project pay?', 'What is the cost of saying no to every project for ten years?'], more: ['ncslSnapshot', 'nacoEcon'] },
+    'Land use & community': {
+      facts: [['Setbacks are already required.', 'G-1463 requires a 500-foot setback between generator and cooling yards, substations, or fuel storage and residential districts or sensitive uses.', ['legalMemo']],
+        ['Noise can be conditioned.', 'The City may require acoustic enclosures, post-construction sound testing, and limits on generator testing.', ['g1463']],
+        ['Litigation is rising where process is weak.', 'WilmerHale describes a growing wave of nuisance, environmental, and land-use suits against data center projects.', ['wilmer']]],
+      qs: ['Where are appropriate locations in El Dorado?', 'How are neighbors notified and heard?', 'Who pays to decommission a site?'], more: ['nacoPrimer', 'uli'] },
+  };
+  const cur = T[tab];
+  return <>
+    <PageHead n="4" eyebrow="What could a data center mean for El Dorado?" depth="5 min read" title="The issues, one at a time" lead="Organized around the questions with the most direct local relevance. The facts shown are the documented ones. Where the answer depends on a specific project, we say so." />
+    <ShortVersion>
+      <StepCard n="1" icon="droplets" title="Water isn't the problem">Closed-loop data centers use <strong>almost no water once filled</strong>. El Dorado has <strong>10 million gallons a day</strong> set aside for industry.</StepCard>
+      <StepCard n="2" icon="zap" title="Power is reviewed up front">Applicants must show <strong>peak load and their utility plan</strong>. Kansas law bars <strong>discounted electric rates</strong> for data centers.</StepCard>
+      <StepCard n="3" icon="receipt" title="Taxes could go down">A $1 billion project could save about <strong>$1,010 a year on a $250,000 home</strong>. Barber County's Google deal has <strong>no property tax abatement</strong>.</StepCard>
+      <StepCard n="4" icon="house" title="Neighbors are protected">G-1463 requires <strong>500-foot setbacks</strong>, noise limits and <strong>public hearings</strong> for every project.</StepCard>
+    </ShortVersion>
+    <Section pad="var(--space-8)">
+      <Tabs tabs={Object.keys(T)} value={tab} onChange={setTab} style={{ marginBottom: 32, overflowX: 'auto' }} />
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(420px,100%),1fr))', gap: 40, alignItems: 'start' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          {cur.facts.map(([h, b, ids]) => <Card key={h} title={h}>{b}<div style={{ marginTop: 10 }}><Src ids={ids} /></div></Card>)}
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16, position: 'sticky', top: 100 }}>
+          <Card tone="lime" eyebrow="Questions worth asking" title="What a Special Use Permit hearing can examine">
+            <ul style={{ margin: '4px 0 0', paddingLeft: 20, display: 'flex', flexDirection: 'column', gap: 8, color: 'var(--fg-1)' }}>{cur.qs.map(q => <li key={q}>{q}</li>)}</ul>
+          </Card>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <Eyebrow>Deeper research</Eyebrow>
+            {cur.more.map(id => <a key={id} href={S[id].u} target="_blank" rel="noreferrer" style={{ display: 'flex', flexDirection: 'column', gap: 2, padding: '12px 0', borderTop: '1px solid var(--border-1)', textDecoration: 'none' }}><span style={{ font: '600 15px/1.4 var(--font-body)', color: 'var(--edf-blue)' }}>{S[id].t}</span><span style={{ fontSize: 13, color: 'var(--fg-2)' }}>{S[id].by}</span></a>)}
+          </div>
+        </div>
+      </div>
+    </Section>
+    <NextPage go={go} to="battery" label="5 · Battery storage" title="What else does the ordinance cover?" />
+  </>;
+}
+window.Impacts = Impacts;

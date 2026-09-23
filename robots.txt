@@ -1,5 +1,5 @@
 # robots.txt — El Dorado Forward
-# Site is under construction. Do not index.
+# Site is under active development. Do not index yet.
 
 User-agent: *
 Disallow: /

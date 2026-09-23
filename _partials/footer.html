@@ -1,0 +1,39 @@
+<div id="edf-footer-root"></div>
+<script type="text/babel">
+(function() {
+  const DS = window.ElDoradoForwardDesignSystem_eb1381;
+  const PAGES = window.EDF_PAGES;
+
+  function Footer() {
+    const lnk = { color: '#fff', textDecoration: 'none', fontSize: 15 };
+    return React.createElement('footer', { style: { background: 'var(--edf-navy)', color: '#fff' } },
+      React.createElement('div', { style: { height: 6, background: 'var(--edf-gradient)' } }),
+      React.createElement('div', { style: { maxWidth: 'var(--container)', margin: '0 auto', padding: '56px var(--gutter) 40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(260px,100%),1fr))', gap: 40 } },
+        React.createElement('div', { style: { display: 'flex', flexDirection: 'column', gap: 16 } },
+          React.createElement(DS.VoteNoLockup, { size: 'sm', subline: false }),
+          React.createElement('p', { style: { color: 'var(--fg-on-dark-2)', fontSize: 15, maxWidth: 360 } }, 'The November 3', React.createElement('sup', null, 'rd'), ' ordinance will limit El Dorado\'s future progress.'),
+          React.createElement('div', { style: { display: 'flex', flexDirection: 'column', gap: 2 } },
+            React.createElement('span', { style: { font: 'var(--type-eyebrow)', letterSpacing: 'var(--tracking-eyebrow)', color: 'var(--fg-on-dark-2)' } }, 'KEEP MOVING'),
+            React.createElement('span', { style: { font: '900 22px var(--font-display)' } }, 'eldorado', React.createElement('span', { style: { color: 'var(--edf-lime)' } }, 'forward'), '.com')
+          )
+        ),
+        React.createElement('nav', { style: { display: 'flex', flexDirection: 'column', gap: 10 } },
+          React.createElement('div', { style: { font: 'var(--type-eyebrow)', letterSpacing: 'var(--tracking-eyebrow)', textTransform: 'uppercase', color: 'var(--edf-lime)' } }, 'The issue'),
+          ...PAGES.filter(p => p.value !== 'home').map(p =>
+            React.createElement('a', { key: p.value, href: p.href, style: lnk }, p.label)
+          )
+        ),
+        React.createElement('div', { style: { display: 'flex', flexDirection: 'column', gap: 10 } },
+          React.createElement('div', { style: { font: 'var(--type-eyebrow)', letterSpacing: 'var(--tracking-eyebrow)', textTransform: 'uppercase', color: 'var(--edf-lime)' } }, 'Election Day'),
+          React.createElement('span', { style: { font: '700 20px var(--font-display)' } }, 'Tuesday, November 3, 2026'),
+          React.createElement('span', { style: { color: 'var(--fg-on-dark-2)', fontSize: 15 } }, 'Special Question Election, City of El Dorado')
+        )
+      ),
+      React.createElement('div', { style: { maxWidth: 'var(--container)', margin: '0 auto', padding: '18px var(--gutter) 28px', borderTop: '1px solid rgba(255,255,255,.14)', fontSize: 13, color: 'var(--fg-on-dark-2)' } },
+        'Paid for by El Dorado Forward, Inc., Linda Jolly, Committee Chair'
+      )
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('edf-footer-root')).render(React.createElement(Footer));
+})();
+</script>

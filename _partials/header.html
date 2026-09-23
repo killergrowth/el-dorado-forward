@@ -1,0 +1,22 @@
+<div id="edf-header-root"></div>
+<script type="text/babel">
+(function() {
+  const DS = window.ElDoradoForwardDesignSystem_eb1381;
+  const PAGES = window.EDF_PAGES;
+  const currentPage = window.EDF_CURRENT_PAGE;
+
+  function SiteHeader() {
+    const [open, setOpen] = React.useState(false);
+    const navLinks = PAGES.filter(p => p.value !== 'home');
+    return React.createElement(DS.SiteHeader, {
+      logoSrc: '/images/logo-full-color.png',
+      links: navLinks.map(p => ({ ...p, active: p.value === currentPage })),
+      active: currentPage,
+      onNavigate: (val) => { const p = PAGES.find(x => x.value === val); if (p) location.href = p.href; },
+      cta: 'Vote No · Nov 3',
+      onCta: () => { location.href = '/ballot/'; }
+    });
+  }
+  ReactDOM.createRoot(document.getElementById('edf-header-root')).render(React.createElement(SiteHeader));
+})();
+</script>

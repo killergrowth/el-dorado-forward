@@ -1,0 +1,24 @@
+/* EDF Site-wide styles */
+a { color: var(--fg-link); }
+a:hover { color: var(--fg-link-hover); }
+html { scroll-behavior: auto; }
+
+/* Hero responsive */
+@media (max-width: 860px) {
+  .edf-hero__photo {
+    position: relative !important;
+    width: 100% !important;
+    height: 260px;
+    clip-path: none;
+  }
+  .edf-hero__panel {
+    width: 100% !important;
+    clip-path: none !important;
+    padding: 40px var(--gutter) 48px !important;
+  }
+}
+
+/* Nav active state */
+.edf-nav__link--active {
+  color: var(--edf-lime) !important;
+}
