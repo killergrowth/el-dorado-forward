@@ -200,7 +200,7 @@ html { scroll-behavior: smooth; }
 
 .edf-vote-no-lockup--sm .edf-vote-no-lockup__icon { width: 40px; height: 40px; }
 .edf-vote-no-lockup--sm .edf-vote-no-lockup__text { font-size: 40px; }
-.edf-vote-no-lockup--md .edf-vote-no-lockup__icon { width: 44px; height: 44px; }
+.edf-vote-no-lockup--md .edf-vote-no-lockup__icon { width: 72px; height: 72px; }
 .edf-vote-no-lockup--md .edf-vote-no-lockup__text { font-size: 64px; }
 
 /* ── STEP CARDS (30-second version) ──────────────── */
