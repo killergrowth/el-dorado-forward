@@ -2427,6 +2427,7 @@ function WaterAdvantage() {
 }
 function FourProblems() {
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    className: 'edf-four-problems',
     style: {
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit,minmax(min(460px,100%),1fr))',

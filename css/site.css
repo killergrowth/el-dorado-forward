@@ -28,6 +28,16 @@ html { scroll-behavior: auto; }
   }
 }
 
+/* FourProblems: stack stat cards on mobile */
+@media (max-width: 768px) {
+  .edf-four-problems {
+    grid-template-columns: 1fr !important;
+  }
+  .edf-four-problems > div {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* Nav active state */
 .edf-nav__link--active {
   color: var(--edf-lime) !important;
