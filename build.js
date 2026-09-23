@@ -55,7 +55,7 @@ for (const [srcFile, outDir, pageKey, title, canonical, ogTitle, metaDesc] of PA
     .replace(/<!-- OG_TITLE -->/g, escHtml(ogTitle));
 
   // Resolve nav active states in header
-  const NAV_KEYS = ['ballot','why','regulate','impacts','battery','communities','sources'];
+  const NAV_KEYS = ['home','ballot','why','regulate','impacts','battery','communities','sources'];
   let header = headerPartial;
   for (const k of NAV_KEYS) {
     const token = `<!-- NAV_ACTIVE:${k} -->`;
