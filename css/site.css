@@ -625,3 +625,190 @@ html { scroll-behavior: smooth; }
   .edf-site-header__hamburger { display: flex; }
   .edf-site-header__inner { position: relative; }
 }
+
+/* ── SECTION MODIFIER: BLUE ────────────────────── */
+.edf-section--blue { background: var(--edf-blue); color: #fff; }
+
+/* ── PAGE HEAD ───────────────────────────── */
+.edf-page-head {
+  background: var(--edf-navy);
+  color: #fff;
+  padding: var(--space-9) 0 var(--space-8);
+}
+.edf-page-head__meta {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 12px 0 8px;
+}
+.edf-page-head__n {
+  font: 900 clamp(80px,12vw,140px)/0.9 var(--font-display);
+  color: var(--edf-lime);
+  letter-spacing: var(--tracking-display);
+}
+.edf-page-head__depth {
+  font: 600 14px/1 var(--font-body);
+  color: var(--fg-on-dark-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.edf-page-head__title {
+  font: var(--type-h2);
+  font-size: clamp(36px, 4.4vw, 56px);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-display);
+  margin: 0 0 16px;
+}
+.edf-page-head__lead {
+  font: 500 20px/1.45 var(--font-body);
+  color: var(--fg-on-dark-2);
+  max-width: 640px;
+  margin: 0;
+}
+
+/* ── BALLOT BOX ──────────────────────────── */
+.edf-ballot-box {
+  background: #fff;
+  border: 2px solid var(--edf-blue);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.edf-ballot-box__label {
+  font: 700 15px/1 var(--font-body);
+  color: var(--edf-blue);
+}
+.edf-ballot-box__text {
+  font: 400 19px/1.6 var(--font-body);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+/* ── BALLOT CARD (Yes/No) ───────────────────── */
+.edf-ballot-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #fff;
+  color: var(--fg-1);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  max-width: 360px;
+  width: 100%;
+  justify-self: center;
+}
+.edf-ballot-card__eyebrow {
+  font: var(--type-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+.edf-ballot-card__option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font: 900 32px/1 var(--font-display);
+  text-transform: uppercase;
+}
+.edf-ballot-card__option--active  { color: var(--edf-blue); }
+.edf-ballot-card__option--inactive { color: var(--fg-3, #999); }
+.edf-ballot-card__bubble {
+  display: block;
+  width: 40px;
+  height: 26px;
+  border-radius: 50%;
+  border: 3px solid currentColor;
+  background: transparent;
+  flex-shrink: 0;
+}
+.edf-ballot-card__bubble--active {
+  background: var(--edf-blue);
+  border-color: var(--edf-blue);
+}
+
+/* ── DEFINITION GRID ────────────────────────── */
+.edf-def-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 20px;
+}
+.edf-def-card {
+  background: #fff;
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.edf-def-card__title {
+  font: 700 16px/1.3 var(--font-body);
+  color: var(--edf-blue);
+  margin: 0;
+}
+.edf-def-card__text {
+  font: 400 15px/1.55 var(--font-body);
+  color: var(--fg-2);
+  margin: 0;
+}
+
+/* ── TIMELINE ─────────────────────────────── */
+.edf-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.edf-timeline__header {
+  font: var(--type-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--edf-blue);
+  margin-bottom: 12px;
+}
+.edf-timeline__item {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border-1);
+}
+.edf-timeline__date {
+  font: 700 14px/1.4 var(--font-body);
+  color: var(--edf-blue);
+}
+.edf-timeline__body {
+  font: 400 16px/1.5 var(--font-body);
+  color: var(--fg-1);
+}
+
+@media (max-width: 480px) {
+  .edf-timeline__item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+/* ── NEXT PAGE BANNER ────────────────────────── */
+.edf-next-page {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #fff;
+}
+.edf-next-page__label {
+  font: var(--type-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--edf-lime);
+}
+.edf-next-page__title {
+  font: var(--type-h2);
+  font-size: clamp(28px, 3.6vw, 48px);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-display);
+  margin: 0 0 8px;
+}
