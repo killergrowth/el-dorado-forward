@@ -1,9 +1,9 @@
-﻿/* EDF Site-wide styles */
+/* EDF Site-wide styles */
 a { color: var(--fg-link); }
 a:hover { color: var(--fg-link-hover); }
 html { scroll-behavior: smooth; }
 
-/* ── SECTIONS ─────────────────────────────────────── */
+/* -- SECTIONS --------------------------------------- */
 .edf-section {
   background: var(--bg-page);
   padding: var(--space-9) 0;
@@ -23,7 +23,7 @@ html { scroll-behavior: smooth; }
   padding-bottom: var(--space-9);
 }
 
-/* ── EYEBROW ──────────────────────────────────────── */
+/* -- EYEBROW ---------------------------------------- */
 .edf-eyebrow {
   display: flex;
   align-items: center;
@@ -41,7 +41,7 @@ html { scroll-behavior: smooth; }
   flex: none;
 }
 
-/* ── HEADINGS ─────────────────────────────────────── */
+/* -- HEADINGS --------------------------------------- */
 .edf-h2 {
   font: var(--type-h2);
   text-transform: uppercase;
@@ -63,7 +63,7 @@ html { scroll-behavior: smooth; }
   margin: 0;
 }
 
-/* ── BUTTONS ──────────────────────────────────────── */
+/* -- BUTTONS ---------------------------------------- */
 .edf-btn {
   display: inline-flex;
   align-items: center;
@@ -112,7 +112,7 @@ html { scroll-behavior: smooth; }
 
 .edf-btn__arrow { font-style: normal; }
 
-/* ── HERO ─────────────────────────────────────────── */
+/* -- HERO ------------------------------------------- */
 .edf-hero {
   position: relative;
   background: var(--edf-navy);
@@ -177,7 +177,7 @@ html { scroll-behavior: smooth; }
   }
 }
 
-/* ── VOTE NO LOCKUP ───────────────────────────────── */
+/* -- VOTE NO LOCKUP --------------------------------- */
 .edf-vote-no-lockup {
   display: flex;
   align-items: center;
@@ -203,7 +203,7 @@ html { scroll-behavior: smooth; }
 .edf-vote-no-lockup--md .edf-vote-no-lockup__icon { width: 72px; height: 72px; }
 .edf-vote-no-lockup--md .edf-vote-no-lockup__text { font-size: 64px; }
 
-/* ── STEP CARDS (30-second version) ──────────────── */
+/* -- STEP CARDS (30-second version) ---------------- */
 .edf-step-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
@@ -251,7 +251,7 @@ html { scroll-behavior: smooth; }
   margin: 0;
 }
 
-/* ── CTA BAR ──────────────────────────────────────── */
+/* -- CTA BAR ---------------------------------------- */
 .edf-cta-bar {
   display: flex;
   align-items: center;
@@ -269,7 +269,7 @@ html { scroll-behavior: smooth; }
   margin: 0;
 }
 
-/* ── TWO-COLUMN LAYOUT ────────────────────────────── */
+/* -- TWO-COLUMN LAYOUT ------------------------------ */
 .edf-two-col {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
@@ -292,7 +292,7 @@ html { scroll-behavior: smooth; }
   }
 }
 
-/* ── PHOTO SLOT ───────────────────────────────────── */
+/* -- PHOTO SLOT ------------------------------------- */
 .edf-photo-slot {
   background-size: cover;
   background-position: center;
@@ -309,7 +309,7 @@ html { scroll-behavior: smooth; }
   }
 }
 
-/* ── CHECKLIST PANEL ──────────────────────────────── */
+/* -- CHECKLIST PANEL -------------------------------- */
 .edf-checklist-panel {
   display: flex;
   flex-direction: column;
@@ -354,7 +354,7 @@ html { scroll-behavior: smooth; }
   margin: 0;
 }
 
-/* ── SOURCE NOTES ─────────────────────────────────── */
+/* -- SOURCE NOTES ----------------------------------- */
 .edf-src {
   font: 400 13px/1.4 var(--font-body);
   color: var(--fg-2);
@@ -396,7 +396,7 @@ html { scroll-behavior: smooth; }
 .edf-src a { color: var(--fg-2); text-decoration: underline; text-underline-offset: 2px; }
 .edf-src--dark a { color: var(--fg-on-dark-2); }
 
-/* ── WATER ADVANTAGE CHART ────────────────────────── */
+/* -- WATER ADVANTAGE CHART -------------------------- */
 .edf-water-chart {
   display: flex;
   flex-direction: column;
@@ -436,7 +436,7 @@ html { scroll-behavior: smooth; }
   border-radius: 3px;
 }
 
-/* ── BLOCKQUOTE PARAGRAPHS (navy section) ─────────── */
+/* -- BLOCKQUOTE PARAGRAPHS (navy section) ----------- */
 .edf-blockquote-p {
   font: 500 18px/1.45 var(--font-body);
   color: var(--fg-on-dark-2);
@@ -446,7 +446,7 @@ html { scroll-behavior: smooth; }
   margin: 0;
 }
 
-/* ── STAT CARD ────────────────────────────────────── */
+/* -- STAT CARD -------------------------------------- */
 .edf-stat-card {
   display: flex;
   flex-direction: column;
@@ -475,7 +475,7 @@ html { scroll-behavior: smooth; }
   color: var(--fg-2);
 }
 
-/* ── FOUR PROBLEMS ────────────────────────────────── */
+/* -- FOUR PROBLEMS ---------------------------------- */
 .edf-four-problems {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr));
@@ -521,14 +521,14 @@ html { scroll-behavior: smooth; }
   }
 }
 
-/* ── LINK ROW (detail nav) ────────────────────────── */
+/* -- LINK ROW (detail nav) -------------------------- */
 .edf-link-row {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-/* ── NAV ACTIVE STATE ─────────────────────────────── */
+/* -- NAV ACTIVE STATE ------------------------------- */
 .edf-nav__link--active {
   color: var(--edf-lime) !important;
 }
@@ -626,10 +626,10 @@ html { scroll-behavior: smooth; }
   .edf-site-header__inner { position: relative; }
 }
 
-/* ── SECTION MODIFIER: BLUE ────────────────────── */
+/* -- SECTION MODIFIER: BLUE ---------------------- */
 .edf-section--blue { background: var(--edf-blue); color: #fff; }
 
-/* ── PAGE HEAD ───────────────────────────── */
+/* -- PAGE HEAD ----------------------------- */
 .edf-page-head {
   background: var(--edf-navy);
   color: #fff;
@@ -666,7 +666,7 @@ html { scroll-behavior: smooth; }
   margin: 0;
 }
 
-/* ── BALLOT BOX ──────────────────────────── */
+/* -- BALLOT BOX ---------------------------- */
 .edf-ballot-box {
   background: #fff;
   border: 2px solid var(--edf-blue);
@@ -686,7 +686,7 @@ html { scroll-behavior: smooth; }
   margin: 0;
 }
 
-/* ── BALLOT CARD (Yes/No) ───────────────────── */
+/* -- BALLOT CARD (Yes/No) --------------------- */
 .edf-ballot-card {
   display: flex;
   flex-direction: column;
@@ -728,7 +728,7 @@ html { scroll-behavior: smooth; }
   border-color: var(--edf-blue);
 }
 
-/* ── DEFINITION GRID ────────────────────────── */
+/* -- DEFINITION GRID -------------------------- */
 .edf-def-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
@@ -754,7 +754,7 @@ html { scroll-behavior: smooth; }
   margin: 0;
 }
 
-/* ── TIMELINE ─────────────────────────────── */
+/* -- TIMELINE ------------------------------- */
 .edf-timeline {
   list-style: none;
   margin: 0;
@@ -792,7 +792,7 @@ html { scroll-behavior: smooth; }
   }
 }
 
-/* ── NEXT PAGE BANNER ────────────────────────── */
+/* -- NEXT PAGE BANNER -------------------------- */
 .edf-next-page {
   display: flex;
   flex-direction: column;
@@ -811,4 +811,10 @@ html { scroll-behavior: smooth; }
   text-transform: uppercase;
   letter-spacing: var(--tracking-display);
   margin: 0 0 8px;
+}
+
+
+/* Mobile h1 scale fix */
+main h1 {
+  font-size: clamp(28px, 9vw, 60px);
 }
