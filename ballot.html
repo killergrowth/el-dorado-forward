@@ -13,18 +13,19 @@
 <main>
 
 <!-- PAGE HEAD -->
-<section class="edf-page-head">
+<section class="edf-section edf-section--subtle edf-section--pad8">
   <div class="edf-section__inner">
-    <div class="edf-eyebrow">
-      <span class="edf-eyebrow__bar"></span>
-      What are we voting on?
+    <div style="display:flex;flex-direction:column;gap:18px;max-width:820px;">
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+        <div class="edf-eyebrow">
+          <span class="edf-eyebrow__bar"></span>
+          1 &middot; What are we voting on?
+        </div>
+        <span style="display:inline-flex;align-items:center;gap:6px;font:600 13px/1 var(--font-body);color:var(--fg-2);background:var(--bg-page);border:1px solid var(--border-1);border-radius:var(--radius-sm);padding:4px 10px;">2 min read</span>
+      </div>
+      <h1 style="font:var(--type-h1);text-transform:uppercase;letter-spacing:var(--tracking-display);margin:0;">The ballot question</h1>
+      <p class="edf-p">Start with the proposition itself. Everything below is quoted from City of El Dorado documents.</p>
     </div>
-    <div class="edf-page-head__meta">
-      <span class="edf-page-head__n">1</span>
-      <span class="edf-page-head__depth">2 min read</span>
-    </div>
-    <h1 class="edf-page-head__title">The ballot question</h1>
-    <p class="edf-page-head__lead">Start with the proposition itself. Everything below is quoted from City of El Dorado documents.</p>
   </div>
 </section>
 
@@ -317,16 +318,20 @@
 </section>
 
 <!-- NEXT PAGE -->
-<section class="edf-section edf-section--navy edf-section--pad8">
+<section class="edf-section edf-section--pad8" style="border-top:1px solid var(--border-1);">
   <div class="edf-section__inner">
-    <div class="edf-next-page">
-      <div class="edf-next-page__label">2 &middot; Why El Dorado</div>
-      <h2 class="edf-next-page__title">Why is this an El Dorado issue?</h2>
-      <a href="/why/" class="edf-btn edf-btn--action">
-        Read next
-        <svg class="edf-btn__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
+    <a href="/why/" style="display:flex;justify-content:space-between;align-items:center;gap:24px;text-decoration:none;color:var(--fg-1);">
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div class="edf-eyebrow">
+          <span class="edf-eyebrow__bar"></span>
+          Next &middot; 2 &middot; Why El Dorado
+        </div>
+        <span style="font:var(--type-h2);text-transform:uppercase;font-size:32px;">Why is this an El Dorado issue?</span>
+      </div>
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--edf-blue);color:#fff;flex:none;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
   </div>
 </section>
 
