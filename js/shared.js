@@ -56,7 +56,7 @@
     const a = S[ids[0]];
     const rest = ids.slice(1).map(k => S[k]).filter(Boolean);
     const c = tone === 'dark' ? 'var(--fg-on-dark-2)' : 'var(--fg-2)';
-    return React.createElement('div', { style: { display: 'flex', flexDirection: 'column', gap: 4 } },
+    return React.createElement('div', { style: { display: 'flex', flexDirection: 'column', gap: 4, marginTop: 16 } },
       React.createElement(DS.SourceNote, { tone, source: a && `${a.by}${a.d ? ' · ' + a.d : ''}`, sourceHref: a && a.u, moreHref: more }),
       rest.length > 0 && React.createElement('div', { style: { display: 'flex', flexWrap: 'wrap', gap: '4px 14px', font: '500 13px/1.4 var(--font-body)', color: c } },
         React.createElement('span', null, 'Also:'),
