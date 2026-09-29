@@ -243,6 +243,18 @@
   }
 
   ReactDOM.createRoot(document.getElementById('page-root')).render(<Why />);
+
+  // Scroll to anchor after React paints
+  if (window.location.hash) {
+    const scrollToAnchor = () => {
+      const el = document.querySelector(window.location.hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+    // Small delay to let React finish rendering
+    setTimeout(scrollToAnchor, 150);
+  }
 })();
 </script>
 </body>
