@@ -14,6 +14,28 @@
 <div id="page-root"></div>
 </main>
 <!-- INJECT:FOOTER -->
+
+<script>
+  if (window.location.hash) {
+    var _anchorTarget = window.location.hash;
+    var _anchorAttempts = 0;
+    var _anchorScroll = function() {
+      var el = document.querySelector(_anchorTarget);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else if (_anchorAttempts < 40) {
+        _anchorAttempts++;
+        setTimeout(_anchorScroll, 100);
+      }
+    };
+    // Start polling once DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() { setTimeout(_anchorScroll, 100); });
+    } else {
+      setTimeout(_anchorScroll, 100);
+    }
+  }
+</script>
 <script type="text/babel">
 (function() {
   const DS = window.ElDoradoForwardDesignSystem_eb1381;
@@ -245,21 +267,6 @@
 
   ReactDOM.createRoot(document.getElementById('page-root')).render(<Why />);
 
-  // Scroll to anchor after React paints — retry until element exists
-  if (window.location.hash) {
-    const target = window.location.hash;
-    let attempts = 0;
-    const scrollToAnchor = () => {
-      const el = document.querySelector(target);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else if (attempts < 20) {
-        attempts++;
-        setTimeout(scrollToAnchor, 100);
-      }
-    };
-    setTimeout(scrollToAnchor, 200);
-  }
 })();
 </script>
 </body>
