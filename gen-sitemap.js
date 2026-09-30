@@ -19,6 +19,7 @@ const PAGES = [
   { url: 'https://eldoradoforward.com/battery/', priority: '0.8' },
   { url: 'https://eldoradoforward.com/communities/', priority: '0.8' },
   { url: 'https://eldoradoforward.com/sources/', priority: '0.8' },
+  { url: 'https://eldoradoforward.com/about/', priority: '0.8' },
 ];
 
 const urlEntries = PAGES.map(p => `  <url>

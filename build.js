@@ -18,6 +18,7 @@ const PAGES = [
   ['battery.html',     'battery',      'battery',     'Battery Storage · El Dorado Forward', 'https://eldoradoforward.com/battery/', 'Battery Storage · El Dorado Forward', 'The ban isn\'t only about data centers. It also prohibits battery energy storage systems above 80 kWh.'],
   ['communities.html', 'communities',  'communities', 'Other Communities · El Dorado Forward', 'https://eldoradoforward.com/communities/', 'Other Communities · El Dorado Forward', 'One town set clear rules and has benefited for 25 years. The other let talks happen out of view.'],
   ['sources.html',     'sources',      'sources',     'Sources & Further Reading · El Dorado Forward', 'https://eldoradoforward.com/sources/', 'Sources & Further Reading · El Dorado Forward', 'The evidence library for El Dorado Forward — organized by type and authority.'],
+  ['about.html',       'about',        'about',       'About El Dorado Forward · Who We Are', 'https://eldoradoforward.com/about/', 'About El Dorado Forward · Who We Are', 'El Dorado Forward, Inc. is a 501(c)(4) organization established in September 2026 by local citizens invested in El Dorado’s economic future.'],
 ];
 
 // Read partials
@@ -55,7 +56,7 @@ for (const [srcFile, outDir, pageKey, title, canonical, ogTitle, metaDesc] of PA
     .replace(/<!-- OG_TITLE -->/g, escHtml(ogTitle));
 
   // Resolve nav active states in header
-  const NAV_KEYS = ['home','ballot','why','regulate','impacts','battery','communities','sources'];
+  const NAV_KEYS = ['home','ballot','why','regulate','impacts','battery','communities','sources','about'];
   let header = headerPartial;
   for (const k of NAV_KEYS) {
     const token = `<!-- NAV_ACTIVE:${k} -->`;
